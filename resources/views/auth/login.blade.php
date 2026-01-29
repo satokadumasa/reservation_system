@@ -2,6 +2,7 @@
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
+    <img src="/img/title.jpg">
     <form method="POST" action="{{ route('login') }}">
         @csrf
 

@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\BookingController;
+
+require __DIR__.'/auth.php';
 
 Route::prefix('admin')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('admin.login');
@@ -21,9 +24,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/calendar', [CalendarController::class, 'index'])->middleware(['auth', 'verified'])->name('calendar.index');
+    Route::get("booking/{ymd}", [BookingController::class, 'create'])->middleware(['auth', 'verified'])->name('booking.regist');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-require __DIR__.'/auth.php';

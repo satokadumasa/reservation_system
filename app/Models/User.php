@@ -34,6 +34,16 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get the user that owns the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user_info(): BelongsTo
+    {
+        return $this->belongsTo(UserInfo::class, 'id', 'user_id');
+    }
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>

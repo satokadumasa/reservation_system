@@ -31,9 +31,9 @@
             @if($calendarDay['show'])
                 <div class="day-block">
                     @if($calendarDay['status'])
-                    <a href="/day_view{{'?today='.$calendarDay['date']->format('Y-m-d')}}" class="btn btn-primary">{{$calendarDay['date']->format('j')}}</a>
+                    <a href="/booking/{{ $calendarDay['date']->format('Y-m-d')}}" class="btn btn-primary">{{$calendarDay['date']->format('j')}}</a>
                     @else
-                    <a href="/day_view{{'?today='.$calendarDay['date']->format('Y-m-d')}}" class="btn btn-secondary">{{$calendarDay['date']->format('j')}}</a>
+                    <a href="/booking/{{ $calendarDay['date']->format('Y-m-d')}}" class="btn btn-secondary">{{$calendarDay['date']->format('j')}}</a>
                     @endif
                 </div>
             @else
