@@ -2,8 +2,8 @@
 @section('content')
 {{-- <div class="my-3"> --}}
     <div class="content">
-        <div class="row" style="height: 50px;">
-            <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8" style="background-color: blue; color: white;">
+        <div class="row" style="height: 50px; padding: 2px 2px 2px 2px;">
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8" style="background-color: blue; color: white; padding: 5px 2px 2px 2px;">
                 <span style="padding: 10px 10px 10px 10px;">{{ $thisMonth->format('Y年m月') }}</span>
             </div>
             <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4" style="background-color: blue; color: white;">
@@ -22,7 +22,7 @@
         <a href="/calendar{{'?year='.$nextMonth->format('Y').'&month='.$nextMonth->format('m')}}" class="btn btn-primary">翌月</a>
     </div>
     <div class="calendar-grid">
-        @foreach([ '(月)', '(火)', '(水)', '(木)', '(金)', '(土)', '(日)',] as $weekName)
+        @foreach([ '(日)', '(月)', '(火)', '(水)', '(木)', '(金)', '(土)', ] as $weekName)
         <div class="week-block">
             {{$weekName}}
         </div>

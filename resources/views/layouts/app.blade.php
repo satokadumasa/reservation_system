@@ -18,32 +18,20 @@
 <!-- Page Content -->
     <div class="container">
         <div class="row">
-            <div class="col-4 col-sm-4 col-md-4 col-lg-5 col-xl-5 col-xxl-5">
-                <span style="font-family: Tahoma; font-size: 18px;">
+            <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
+                <span style="font-family: Tahoma; font-size: 18px; margin: 2px 2px 2px 2px;">
                     <a href="/">{{ config('app.name', 'Laravel') }}</a>
                 </span>
             </div>
-            <div class="col-8 col-sm-8 col-md-8 col-lg-7 col-xl-7 col-xxl-7">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
-                            <a href="tel:{{ config('app.tel_num.inquiry') }}"><img src="img/icon/telephone_10764.png" style="width: 30px; height: 30px;">お問い合わせ</a>
-                        </div>
-                        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
-                            <a href="/calendar" class="btn btn-primary">予約</a>
-                        </div>
-                    </div>
-
+            <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4" style="padding: 2px 2px 2px 2px;">
+                <a href="tel:{{ config('app.tel_num.inquiry') }}"><img src="img/icon/telephone_10764.png" style="width: 30px; height: 30px;">お問い合わせ</a>
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3" style="padding: 2px 2px 2px 2px;">
+                <a href="/calendar" class="btn btn-primary">予約</a>
             </div>
         </div>
-    </div>
 @yield('content')
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <span>© 2025</span>
-            </div>
-        </div>
+        <footer class="v-footer v-sheet theme--light v-footer--fixed" data-booted="true" style="left: 0px; right: 0px; bottom: 0px;position: fixed;background-color: whitesmoke;"><span>© 2025</span></footer>
     </div>
     <script>
 

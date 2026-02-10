@@ -16,6 +16,10 @@ class UserInfo extends Model
         'city',
         'street',
         'building',
+        'tel_num',
+        'mobile_num',
+        'created_at',
+        'updated_at',
     ];
     /**
      * Get the user that owns the UserInfo

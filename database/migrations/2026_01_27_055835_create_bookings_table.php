@@ -15,23 +15,11 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id')->index();
             $table->integer('work_id')->index();
-            $table->string('firstname', 32)->index();
-            $table->string('lastname', 32)->index();
-            $table->string('zip_code')->index();
-            $table->integer('pref_id')->index();
-            $table->string('city')->index();
-            $table->string('street')->index();
-            $table->string('building')->nullable()->index();
-            $table->string('tel_num')->nullable()->index();
-            $table->string('mobile_num')->nullable()->index();
-            $table->datetime('booking_date')->index();
-            $table->string('start_time')->index();
-            $table->string('end_time')->index();
+            $table->dateTime('start_time')->index();
+            $table->dateTime('end_time')->index();
             $table->timestamps();
 
-            $table->index(['firstname','lastname']);
-            $table->index(['zip_code','pref_id','city']);
-            $table->index(['street','building']);
+            $table->index(['user_id','work_id','start_time','end_time']);
         });
     }
 

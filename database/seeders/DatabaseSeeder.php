@@ -6,6 +6,8 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Work;
+use App\Models\Pref;
 use App\Models\Booking;
 
 class DatabaseSeeder extends Seeder
@@ -33,6 +35,12 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'rainyrook',
             'email' => 'rainyrook@example.com',
+            'password' => 'password',
+            'email_verified_at' => '2026-01-22 00:00:00',
+        ]);
+        User::create([
+            'name' => 'ksato',
+            'email' => 'ksato@example.com',
             'password' => 'password',
             'email_verified_at' => '2026-01-22 00:00:00',
         ]);
@@ -88,5 +96,35 @@ class DatabaseSeeder extends Seeder
         Pref::create(['name' => '鹿児島県',]);
         Pref::create(['name' => '沖縄県',]);
 
+        Booking::create([
+            'user_id' => 1,
+            'work_id' => 1,
+            'start_time' => '2026-02-10 12:00:00',
+            'end_time' => '2026-02-10 13:00:00',
+        ]);
+        Booking::create([
+            'user_id' => 2,
+            'work_id' => 1,
+            'start_time' => '2026-02-10 15:00:00',
+            'end_time' => '2026-02-10 16:00:00',
+        ]);
+        Booking::create([
+            'user_id' => 3,
+            'work_id' => 1,
+            'start_time' => '2026-02-11 10:00:00',
+            'end_time' => '2026-02-11 12:00:00',
+        ]);
+        Booking::create([
+            'user_id' => 1,
+            'work_id' => 1,
+            'start_time' => '2026-02-12 10:00:00',
+            'end_time' => '2026-02-12 12:00:00',
+        ]);
+        Booking::create([
+            'user_id' => 1,
+            'work_id' => 1,
+            'start_time' => '2026-02-13 10:00:00',
+            'end_time' => '2026-02-13 12:00:00',
+        ]);
     }
 }

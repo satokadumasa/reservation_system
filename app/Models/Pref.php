@@ -8,6 +8,8 @@ class Pref extends Model
 {
     protected $fillable = [
         'name',
+        'created_at',
+        'updated_at',
     ];
 
     /**
@@ -15,8 +17,8 @@ class Pref extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function pref(): HasOne
+    public function user_info(): HasOne
     {
-        return $this->hasMany(UserInfo::class, 'id', 'pref_id');
+        return $this->hasOne(UserInfo::class, 'id', 'pref_id');
     }
 }

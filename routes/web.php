@@ -1,6 +1,4 @@
 <?php
-
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\LoginController;
 use App\Http\Controllers\HomeController;
@@ -17,6 +15,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/dashboard', function () {
             return view('admin.dashboard');
         });
+        
     });
 });
 
@@ -24,8 +23,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/calendar', [CalendarController::class, 'index'])->middleware(['auth', 'verified'])->name('calendar.index');
-    Route::get("booking/{ymd}", [BookingController::class, 'create'])->middleware(['auth', 'verified'])->name('booking.regist');
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get("/booking/{ymd}", [BookingController::class, 'index'])->middleware(['auth', 'verified'])->name('booking.list');
+    Route::get("/booking/{id}", [BookingController::class, 'show'])->middleware(['auth', 'verified'])->name('booking.show');
+    Route::get("/booking/regist", [BookingController::class, 'create'])->middleware(['auth', 'verified'])->name('booking.regist');
+    Route::post("/booking/regist", [BookingController::class, 'store'])->middleware(['auth', 'verified'])->name('booking.store');
+    Route::get("/booking/edit/{id}", [BookingController::class, 'edit'])->middleware(['auth', 'verified'])->name('booking.edit');
+    Route::put("/booking/edit", [BookingController::class, 'update'])->middleware(['auth', 'verified'])->name('booking.update');
 });
